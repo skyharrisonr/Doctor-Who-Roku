@@ -1,0 +1,41 @@
+<?xml version = "1.0" encoding = "utf-8" ?> 
+
+<component name = "RowCharactersList" extends = "Scene" initialFocus = "HeroesVillainsList" >
+
+  <script type = "text/brightscript" >
+
+    <![CDATA[
+
+    sub init()
+      m.top.backgroundURI = "pkg:/images/scenebackground.png"
+
+      rowlist = m.top.findNode("HeroesVillainsList")
+
+      rowlist.content = CreateObject("roSGNode", "RowCharacters")
+
+      m.top.setFocus(true)
+    end sub
+
+    ]]>
+
+  </script>
+
+  <children >
+
+    <RowList 
+      id = "HeroesVillainsList" 
+      translation = "[ 50, 50 ]" 
+      itemComponentName = "Character" 
+      numRows = "3" 
+      itemSize = "[ 1280, 350 ]" 
+      rowItemSize = "[ [350, 300] ]" 
+      rowItemSpacing = "[0,50]"
+      itemSpacing = "[ 0, 40 ]" 
+      showRowLabel = "[ true ]" 
+      drawFocusFeedback = "false" 
+     
+      rowFocusAnimationStyle = "fixedFocusWrap" />
+
+  </children>
+
+</component>
